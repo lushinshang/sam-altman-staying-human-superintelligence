@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%230f7b6c%27/%3E%3Cpath d=%27M12 46 26 30l8 8 18-22%27 stroke=%27white%27 stroke-width=%277%27 fill=%27none%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<title>Sam Altman 史丹佛商學院訪談全文譯本（非官方）</title>
+<meta name="description" content="〈Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence〉（Stanford GSB，2026-10-21 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="Sam Altman 史丹佛商學院訪談全文譯本（非官方）">
+<meta property="og:description" content="〈Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence〉（Stanford GSB，2026-10-21 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta property="og:image" content="https://lushinshang.github.io/sam-altman-staying-human-superintelligence/images/og-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="燈火溫暖的文藝復興風格工作室裡，幾個人圍著長桌畫草圖、做模型，拱窗外是冷色調、向遠方延伸的巨大機械">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sam Altman 史丹佛商學院訪談全文譯本（非官方）">
+<meta name="twitter:description" content="〈Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence〉（Stanford GSB，2026-10-21 上傳）全文繁體中文譯本，採台灣用語；非官方翻譯（AI 模型翻譯與審校）。">
+<meta name="twitter:image" content="https://lushinshang.github.io/sam-altman-staying-human-superintelligence/images/og-hero.jpg">
+<meta property="og:url" content="https://lushinshang.github.io/sam-altman-staying-human-superintelligence/translation-zh.html">
+<style>
+:root{
+  --bg:#f9f7f4; --surface:#fffdf9; --ink:#1a1a1a; --muted:#5f5b54; --line:#e4dfd6;
+  --accent:#0f7b6c; --accent-ink:#0b5c51; --note:#f0ebe1; --code:#ece6d8; --link:#1f5f99;
+  --card:#fff6e8; --card-line:#e8c99a; --shadow:0 6px 24px rgba(40,30,10,.08);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1b1a18; --surface:#26241f; --ink:#ece8de; --muted:#aaa497; --line:#3a3730;
+    --accent:#4fc1ad; --accent-ink:#7fd6c6; --note:#2f2c25; --code:#33302a; --link:#8fbde8;
+    --card:#2d2820; --card-line:#5b4a30; --shadow:0 6px 24px rgba(0,0,0,.35);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);overflow-x:hidden;
+  font:17px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;letter-spacing:0}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:8px 14px;z-index:300}
+.skip:focus{left:8px;top:8px}
+nav.toc{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0 auto;padding:0 16px;max-width:1120px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;
+  white-space:nowrap;-webkit-overflow-scrolling:touch;min-height:52px;align-items:center}
+nav.toc ul::-webkit-scrollbar{display:none}
+nav.toc a{display:inline-block;padding:8px 12px;border-radius:999px;color:var(--muted);text-decoration:none;font-size:14px;min-height:36px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--note);color:var(--ink)}
+a{color:var(--link);overflow-wrap:anywhere}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.page{max-width:1120px;margin:0 auto;padding:0 20px 80px}
+header.hero{padding:56px 0 8px;text-align:center}
+.eyebrow{margin:0 0 8px;color:var(--accent-ink);font-weight:700;letter-spacing:0;font-size:14px}
+h1{margin:0 auto 14px;max-width:820px;font-size:clamp(1.7rem,1.2rem + 2vw,2.6rem);line-height:1.3;text-wrap:balance}
+.byline{margin:0 0 6px;color:var(--muted);font-size:14px}
+.video-link{margin:0 0 28px;font-size:14px}
+figure{margin:32px 0}
+figure img{display:block;width:100%;height:auto;aspect-ratio:var(--ar-d,16/9);object-fit:contain;border-radius:12px;
+  box-shadow:var(--shadow);background:var(--surface);cursor:zoom-in}
+@media (max-width:640px){figure picture img{aspect-ratio:var(--ar-m,9/16)}}
+@media (max-width:640px){figure.hero-figure picture img{max-width:300px;margin:0 auto}}
+figure.hero-figure{max-width:720px;margin-left:auto;margin-right:auto}
+hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+p.figcap{margin:-18px auto 1.4em;text-align:center;font-size:14px;color:var(--muted)}
+figcaption{margin:10px auto 0;max-width:720px;font-size:14px;line-height:1.55;color:var(--muted);text-align:center}
+article{max-width:720px;margin:0 auto}
+article figure.section-figure{margin-left:50%;transform:translateX(-50%);width:min(860px,calc(100vw - 32px))}
+h2{margin:56px 0 12px;font-size:1.55rem;line-height:1.4;scroll-margin-top:72px;text-wrap:balance;
+  border-left:5px solid var(--accent);padding-left:14px;margin-left:-19px}
+h3{margin:36px 0 8px;font-size:1.2rem;line-height:1.45}
+p{margin:0 0 1.1em}
+ul,ol{margin:0 0 1.2em;padding-left:1.4em}
+li{margin:.35em 0}
+strong{font-weight:700}
+code{background:var(--code);padding:.1em .4em;border-radius:5px;font:0.9em ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+section.summary-card{background:var(--card);border:1px solid var(--card-line);border-radius:14px;padding:6px 22px 10px;margin:24px 0 8px;box-shadow:var(--shadow)}
+section.summary-card h2{margin:14px 0 8px;font-size:1.2rem;border-left:0;padding-left:0;margin-left:0}
+section.summary-card p{margin:0 0 .8em;font-size:16.5px}
+ol.takeaways{padding-left:1.6em}
+ol.takeaways li{margin:.8em 0;padding-left:.2em}
+ol.takeaways li::marker{color:var(--accent-ink);font-weight:700}
+ul.sources li{overflow-wrap:anywhere}
+aside.note{background:var(--note);border-left:4px solid var(--accent);border-radius:8px;padding:12px 16px;margin:0 0 1.6em;font-size:15px;color:var(--ink)}
+aside.note p,aside.note ul{margin:0 0 .6em}
+aside.note ul{padding-left:1.3em}
+figure.diagram{margin:28px 0}
+.mermaid-scroll{overflow-x:auto;max-width:100%;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;-webkit-overflow-scrolling:touch}
+.mermaid-scroll pre{margin:0;font:14px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre;color:var(--ink)}
+.mermaid-scroll svg{display:block;margin:0 auto;height:auto;max-width:100%}
+.table-scroll{overflow-x:auto;margin:0 0 1.6em;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.table-scroll table{border-collapse:collapse;width:100%;min-width:560px;font-size:15px;line-height:1.55}
+.table-scroll th,.table-scroll td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.table-scroll th{background:var(--note);font-weight:700}
+.table-scroll tr:last-child td{border-bottom:0}
+.table-scroll td.k{font-weight:600;white-space:nowrap}
+.table-scroll td.nw{white-space:nowrap}
+.table-scroll.wide{margin-left:50%;transform:translateX(-50%);width:min(1040px,calc(100vw - 32px))}
+@media (max-width:640px){.table-scroll.wide{margin-left:0;transform:none;width:auto}}
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  .table-scroll table{min-width:0}
+  .table-scroll thead{position:absolute;left:-9999px}
+  .table-scroll tr,.table-scroll td{display:block}
+  .table-scroll tr{padding:10px 12px;border-bottom:1px solid var(--line)}
+  .table-scroll tr:last-child{border-bottom:0}
+  .table-scroll td{padding:2px 0;border:0}
+  .table-scroll td.k{color:var(--accent-ink);white-space:normal}
+  .table-scroll td.nw{white-space:normal}
+  .table-scroll td::before{content:attr(data-label) "：";font-weight:700;color:var(--muted);font-size:13px}
+}
+
+p.lede{margin:0 auto 10px;max-width:760px;color:var(--muted);font-size:16px;line-height:1.65}
+footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,18,14,.9);align-items:center;justify-content:center;padding:24px}
+.lightbox.is-open{display:flex}
+.lightbox img{max-width:96vw;max-height:90vh;width:auto;height:auto;border-radius:8px;box-shadow:0 12px 48px rgba(0,0,0,.5);background:#fff}
+.lightbox button{position:absolute;top:14px;right:14px;min-width:44px;min-height:44px;padding:8px 14px;border:0;border-radius:999px;
+  background:#fff;color:#222;font-size:15px;cursor:pointer}
+@media (max-width:760px){
+  h2{margin-left:0;border-left:0;padding-left:0;border-top:3px solid var(--accent);padding-top:10px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .page{padding:0 16px 64px}
+  header.hero{padding-top:36px}
+  h2{font-size:1.35rem}
+  section.summary-card{padding:4px 16px 8px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<nav class="toc" aria-label="章節導覽"><ul><li><a href="#sec-1" title="章節 1：開場（00:00）">1·00:00</a></li><li><a href="#sec-2" title="章節 2：早期職涯與 Y Combinator（01:33）">2·01:33</a></li><li><a href="#sec-3" title="章節 3：邊做邊學的價值（03:54）">3·03:54</a></li><li><a href="#sec-4" title="章節 4：OpenAI 的願景（07:05）">4·07:05</a></li><li><a href="#sec-5" title="章節 5：領導方式的轉變（10:03）">5·10:03</a></li><li><a href="#sec-6" title="章節 6：AI 安全與政策（13:11）">6·13:11</a></li><li><a href="#sec-7" title="章節 7：資安與未來風險（17:15）">7·17:15</a></li><li><a href="#sec-8" title="章節 8：AI 時代的職涯建議（21:29）">8·21:29</a></li><li><a href="#sec-9" title="章節 9：人的潛能與價值（25:52）">9·25:52</a></li><li><a href="#sec-10" title="章節 10：文藝復興還是工業革命（30:06）">10·30:06</a></li><li><a href="#sec-11" title="章節 11：基礎設施與人生清單（32:47）">11·32:47</a></li><li><a href="#sec-12" title="章節 12：對齊與開源（35:13）">12·35:13</a></li><li><a href="#sec-13" title="章節 13：軟體護城河與開放權重（40:34）">13·40:34</a></li><li><a href="#sec-14" title="章節 14：未來的組織（44:28）">14·44:28</a></li></ul></nav>
+<div class="page">
+<header class="hero">
+<p class="eyebrow">全文譯本（非官方）</p>
+<h1>Sam Altman 史丹佛商學院訪談全文譯本（非官方）</h1>
+<p class="lede">Stanford GSB〈View From The Top〉，2026-10-21 上傳</p>
+<p class="byline">原文：Stanford Graduate School of Business，2026-10-21　譯本整理：2026-10-31</p>
+</header>
+<main id="main"><article>
+<aside class="note"><p>本譯文由 AI 模型依頻道上傳的英文字幕翻譯並審校，不是人類翻譯，也沒有經過人工校稿或對照原音；本頁不標說話者，提問學生的姓名已略去。原影片版權屬原頻道，僅供閱讀與研究，若有出入以影片為準。</p></aside>
+<p>原影片：<a href="https://www.youtube.com/watch?v=anAmTGcewX8" target="_blank" rel="noopener noreferrer">Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence</a>。對應的<a href="index.html">深度導讀</a>與<a href="player.html">雙語同步播放器</a>另附。</p>
+<hr>
+<h2 id="sec-1">章節 1：開場（00:00）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=4s" target="_blank" rel="noopener noreferrer">00:04</a> 大家午安，歡迎來到新一期的 View from the Top。今天我非常榮幸能介紹我們的來賓山姆・奧特曼，他是 OpenAI 的共同創辦人兼執行長，也是當前塑造全球如何看待人工智慧最具影響力的聲音之一。許多人都知道，奧特曼的職涯始於創業，在成為投資人與創業家之前，他共同創辦了一家名叫 Loopt 的公司。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=37s" target="_blank" rel="noopener noreferrer">00:37</a> 後來他擔任 Y Combinator 總裁，與許多早期創辦人密切合作，協助培育了下一代的新創公司。OpenAI 已經成為全球最受矚目的公司之一，而奧特曼對這項技術未來走向的觀點，持續影響著商業、政策與文化領域的討論。今天，奧特曼將分享他的觀點，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=68s" target="_blank" rel="noopener noreferrer">01:08</a> 分享他身處我們這個時代影響最深遠的技術變革核心所建立的視角。我們非常高興今天能邀請到他。請大家和我一起歡迎山姆・奧特曼。（掌聲）</p>
+<h2 id="sec-2">章節 2：早期職涯與 Y Combinator（01:33）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=93s" target="_blank" rel="noopener noreferrer">01:33</a> 嗨，山姆。你好。歡迎來到 GSB。謝謝你們邀請我。大家都很興奮能邀請你來這裡。你知道嗎，為了準備這場訪談，我做的一件事就是跟一個 AI 版的你對話，當然是用 Codex 打造的。它非常有幫助，回答了我大部分的問題，但我必須說，我還是不認為有什麼比得上面對面的對話，所以謝謝你來。很興奮能來到這裡。山姆，現場很多觀眾都知道你當年離開史丹佛創辦了你的第一家新創公司，但可能比較少人知道你差一點跑去投資銀行實習。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=131s" target="_blank" rel="noopener noreferrer">02:11</a> 沒錯，確實是這樣。你能帶我們回顧那個決定，以及你當時的心態嗎？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=139s" target="_blank" rel="noopener noreferrer">02:19</a> 其實我從來沒想過要當投資銀行家，但當時所有酷酷的同學都想做這個，我就屈服於同儕壓力了。不是啦，如果你們之中有人想當投資銀行家，或已經是了，我完全支持。那純粹不是我內心真正想做的事。我本來是個書呆子，但到了史丹佛之後，所有最聰明的學生都想進投資銀行，那是當時最酷的事。我就想說，我也想當個聰明孩子。也許我也應該想要進投資銀行才對。所以純粹只是因為同儕壓力，真的，我……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=173s" target="_blank" rel="noopener noreferrer">02:53</a> 走完了整個流程，拿到了實習，覺得自己超級酷。那時候，他們會幫你出機票飛到紐約，有面試，接著還有超高級的晚餐，對於一個大概 18、19 歲的我來說，真的印象非常深刻。我以前從沒體驗過這種排場，這讓我更加覺得，這肯定就是適合我的路。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=195s" target="_blank" rel="noopener noreferrer">03:15</a> 然後我心裡那種恐懼感就越來越強烈，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=202s" target="_blank" rel="noopener noreferrer">03:22</a> 我就是覺得自己不會喜歡這份工作。與此同時，我一直在做某種……當時甚至稱不上是新創公司，只是一個跟幾個朋友一起做的專案。然後 Y Combinator 就說：「我們會給你一筆暑假的生活費，你可以試著開一家新創公司。」我就想：「好，這是宇宙給我的徵兆。我應該去試試看。」於是你加入了 Y Combinator 的第一期，對。最終成為了 YC 的總裁。從經營一家新創公司，到掌舵全球最著名的新創加速器，這段經歷帶給你什麼啟發？</p>
+<h2 id="sec-3">章節 3：邊做邊學的價值（03:54）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=238s" target="_blank" rel="noopener noreferrer">03:58</a> 退學讓我蠻難過的，因為我很喜歡上學，而且我也擔心自己會不會就此不再繼續學新東西。對我來說，做新創公司最棒的一點是，它曾經是、現在也依然是我身處過學習速率最高的環境。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=258s" target="_blank" rel="noopener noreferrer">04:18</a> 在這種場合講這個可能不太對，但當時有人跟我說過一句話，我想是……太棒了。可能是保羅・葛拉漢，也可能是類似的人，當時跟我說：你做新創公司一個月，就能學到一整個 MBA 的內容。（觀眾笑聲）而且，你知道的，我沒有 MBA 學位，所以我不能說這到底是不是真的，但我確實非常迅速地學到了很多關於商業、產品、客戶和銷售的知識，以及其他所有對我往後職涯非常重要的東西，我想這些在學校我根本學不到。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=292s" target="_blank" rel="noopener noreferrer">04:52</a> 這就是那種只能邊做邊學的事情，而且也許根本沒有其他好的學習途徑。所以在創業的那第一個階段，學習的速率簡直難以置信。我這輩子絕對沒有在任何其他時期學過這麼多東西。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=310s" target="_blank" rel="noopener noreferrer">05:10</a> 經營 YC 本身又是另一種學習。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=316s" target="_blank" rel="noopener noreferrer">05:16</a> 那幾乎有點像公家機關的工作。你並沒有這些公司的權力，但你試圖建立一個健康的社群，確保每個人都能茁壯成長。所以那是另一種很有趣且截然不同的學習體驗。而且，之前做過的一切——大家在自己的人生中也都會發現這一點—— 你都會以它們為基礎往上疊，不管它們看起來多不相干。因此我學到了很多經營新創公司的經驗，這些對管理 YC 很有幫助，但這畢竟是一份截然不同的工作。你是如何去學習所有這些跟經營新創公司如此不同的技能的？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=348s" target="_blank" rel="noopener noreferrer">05:48</a> 你覺得自己是在做中學，還是有導師指點？你實際上是怎麼做到的？嗯。我是說，肯定有很好的導師指點，但沒有什麼……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=362s" target="_blank" rel="noopener noreferrer">06:02</a> 我認為如果一項工作已經被重複做過很多次，你或許可以在課堂上學會它。或許可以。你可以學到很多有幫助的技能和很多有用的知識。但我認為像任何具體的新創公司、經營 Y Combinator，或任何其他沒什麼人做過的工作，你都只能邊做邊學。我非常堅信，人們花了太多時間去為做某件事做準備，而不是直接動手去做、邊做邊學。所以，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=398s" target="_blank" rel="noopener noreferrer">06:38</a> 你一定會犯很多錯誤。你一定會學得非常快，只要你真正抱持著，我想大家稱之為刻意練習的精神，也就是你進行大量的實驗，然後真正反思學到的經驗，不管是正面的還是負面的，並試著更新你的心智模型，而不是單純地……胡亂掙扎。我認為學習的速率超級高，而且人們幾乎總是會對自己感到驚訝：只要你放手跳進去做，你能多麼快就變得擅長。</p>
+<h2 id="sec-4">章節 4：OpenAI 的願景（07:05）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=425s" target="_blank" rel="noopener noreferrer">07:05</a> YC 讓你能近距離觀察各種雄心勃勃的想法，然而在 2015 年，當你共同創辦 OpenAI 時，大多數人都告訴你通用人工智慧（AGI）是不可能的，至少在可預見的未來是不可能的。你認為你和你的團隊當時看到了什麼其他人遺漏的東西？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=446s" target="_blank" rel="noopener noreferrer">07:26</a> 深度學習是行得通的。其實，當我還是史丹佛的學生時，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=453s" target="_blank" rel="noopener noreferrer">07:33</a> 我在 AI 實驗室工作，而且我本來打算把職涯投入 AI。我記得非常清楚，2005 年有一位史丹佛資工系教授告訴我，我們唯一確定的一件事——關於 AI 有很多事情—— 大概至少還要再一個世紀，但我們唯一確定的就是，深度學習行不通。我當時就想，好吧。我相信你。畢竟你那麼厲害。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=484s" target="_blank" rel="noopener noreferrer">08:04</a> 然後在 2012 年，出現了著名的 AlexNet 成果。到了 2014 年，我們已經看到深度學習似乎在各種不同面向都隨著規模而變得更好。但全世界完全不接受這一點。其實再怎麼強調都不為過，當時全世界是多麼認定「這不可能行得通」。你知道，網路上現在還是找得到少數幾個人，把所有時間都花在說深度學習不會成功、只是個花招之類的。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=517s" target="_blank" rel="noopener noreferrer">08:37</a> 到了現在，那算是激進的觀點。在當時，激進的觀點是「這不可能達到任何嚴肅程度的智慧」。這想法太荒謬了。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=528s" target="_blank" rel="noopener noreferrer">08:48</a> 但我多少學到了一件事，而且如果說我的職涯有什麼核心洞見，就是這一點：規模化會帶來令人驚訝的效應，而當你看到某種以指數方式漂亮規模化的事物時，你應該繼續推動下去。而人類的直覺在這方面處理得不好。在所有這些不同的事物中，像是個別公司的規模回報、像 Y Combinator 這樣的網路、類神經網路，我還可以舉出很多其他例子，但為了節省時間就先跳過。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=562s" target="_blank" rel="noopener noreferrer">09:22</a> 我一直都發現這一點，而這也讓我建立起很高的個人信念，要繼續押注在上面。所以當我們看到這行得通，而且看到它隨規模擴大而變強時，我們當時並不知道它隨規模變強的過程有多可預測。那是幾年後的事。當時看起來我們就是應該繼續推進它。而且，你知道，也許它在某個時間點會失效。我們當時也不確定。我們有好幾次差點失去信念，以為自己碰到了某種瓶頸，但我們還是繼續走下去了。這在當時非常不明顯，幾乎任何不在 OpenAI 內部的人似乎都不相信這點。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=596s" target="_blank" rel="noopener noreferrer">09:56</a> 字面上不完全是這樣。顯然還是有人相信，但那是一個非常不受歡迎的觀點。</p>
+<h2 id="sec-5">章節 5：領導方式的轉變（10:03）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=603s" target="_blank" rel="noopener noreferrer">10:03</a> OpenAI 最初是一家非營利研究實驗室，並沒有打算成為產品公司。而今天，每週有超過十億人使用 ChatGPT。隨著 OpenAI 獲得巨大的影響力，你自己的領導方式經歷了怎樣的轉變？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=620s" target="_blank" rel="noopener noreferrer">10:20</a> 就像 2010 年代中期的許多矽谷科技人一樣，我也深深著迷於研究實驗室的想法。那時候大家都在討論矽谷如何在研究上迷失了方向，我們需要重返 Xerox PARC、貝爾實驗室，或是你最喜歡的任何典範。談論並實踐這些事有點酷。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=652s" target="_blank" rel="noopener noreferrer">10:52</a> 我一直覺得做研究棒極了。我一直都蠻想經營一家研究實驗室，而且我一直對 AI 很感興趣。所以……這原本算是我的退休專案。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=665s" target="_blank" rel="noopener noreferrer">11:05</a> 在最初的大約五年裡，那真的是我能想像中最酷的工作了。我們只有一小群人。那是一個研究實驗室。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=676s" target="_blank" rel="noopener noreferrer">11:16</a> 我們在很多事情上都判斷對了，但對於 AI 開發出來後會怎麼走，我們想錯了。因此，我們真的從來沒想過最可能的路徑竟然是我們必須建立一家產品公司。我們大多以為我們會開發出這種不可思議的超級智慧，我知道現在聽起來很荒謬，然後我們不必承擔所有繁重的工作，去想方設法把它有效地交到人們手中並讓社會獲益。這就像很久以前有個迷因：第一步，做第一件事，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=709s" target="_blank" rel="noopener noreferrer">11:49</a> 第二步，做第二件事，問號問號問號問號，然後獲利——講的是新創公司會怎麼運作。我們的版本就像是：做研究、打造超級智慧、很多問號、人們受益而且很開心。然後……而這項技術走的路線跟我們最初設想的非常不同。我認為這是一條好得多的路，但這意味著我們確實必須將它產品化。這也意味著——這也是我認為它是個好方向的原因之一——它比我們當時想像的更像一種正常的經濟力量。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=742s" target="_blank" rel="noopener noreferrer">12:22</a> 這就像電力、電晶體或其他重大科學發現一樣，能夠促成許多其他公司、技術和科學發現的誕生，而我們必須把基礎設施 交到人們手中，這包括打造像 ChatGPT 這樣的產品，也包括打造比人類歷史上任何計畫都更龐大的算力規模。所以到了</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=773s" target="_blank" rel="noopener noreferrer">12:53</a> 我會說是 2020 年，2020 年底、2021 年初，很明顯我們必須打造一家大公司。沒想到會這麼快，然後我們推出 ChatGPT 時（將近四年前），一夕之間大家都覺得：好，我們很快就要成為一家大公司了。你們是一家非常大的公司。</p>
+<h2 id="sec-6">章節 6：AI 安全與政策（13:11）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=792s" target="_blank" rel="noopener noreferrer">13:12</a> 我很好奇想知道，今天對你而言最難做的是哪類決定？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=802s" target="_blank" rel="noopener noreferrer">13:22</a> 我想……那可能要花掉我們剩下的所有時間。我很樂意談這個，但我腦海中浮現的第一件事是……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=813s" target="_blank" rel="noopener noreferrer">13:33</a> 大家對此有不同的稱呼：暫停、控速、智慧速限。但從根本上說，如果你相信——而我非常相信—— 人類應該永遠掌控未來，我們既不該蓄意把決策權不可逆地移交給 AI，也不該意外失控；同時你也相信未來的權力必須相當分散，這兩者其實都是在用不同的方式說明：我們希望帶領我們走到今天的民主與多元理想能延續下去，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=846s" target="_blank" rel="noopener noreferrer">14:06</a> 我們不希望看到權力過度集中，無論是集中在智商 100 億的單一 AI 身上，還是集中在少數擁有 AI 且能為所欲為、其他人卻無能為力的人手中。如果你相信這兩點，那麼我認為就會遇到非常棘手的問題：我們能讓一個 AI 系統比最聰明的人聰明多少？多快？而我們又需要提升人們多少能力，讓他們更聰明或理解這些系統？而且我認為這是可以解決的。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=877s" target="_blank" rel="noopener noreferrer">14:37</a> 只是需要時間。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=881s" target="_blank" rel="noopener noreferrer">14:41</a> 接著如果你相信這一點，那麼我認為全世界能夠凝聚共識，來界定這些界限並決定如何應對的方式，其實相當有限。這些都是非常棘手的事，因為各方都有極為強烈的意見。你知道，有人會說任何監管都是壞事，我認為這是錯的。有人說我們現在必須徹底停止一切進展，我認為這絕對是錯的。而在社會許多利害關係最重大的辯論中，試圖在其中扮演務實中間派，處境非常艱難。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=915s" target="_blank" rel="noopener noreferrer">15:15</a> 在過去 6 個月看到能力加速提升時，你自己對身為務實中間派以及 AI 安全的想法有了怎樣的轉變？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=927s" target="_blank" rel="noopener noreferrer">15:27</a> 我仍然相信我們很多最早期的</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=934s" target="_blank" rel="noopener noreferrer">15:34</a> 原則，關於我們認為 AI 應該如何在社會中部署。我依然相信迭代式部署。我依然相信社會必須在我們開發這項技術的同時去應對它，儘管這很困難，變化速度也快得令人難以置信。而且我依然相信</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=953s" target="_blank" rel="noopener noreferrer">15:53</a> 人們具有驚人的韌性與適應力，老實說也沒有那麼在乎機器做的工作。他們只是非常專注於人。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=962s" target="_blank" rel="noopener noreferrer">16:02</a> 即使未來的科技格局看起來大不相同，未來的社會型態也會比人們想像的更接近今天。話雖如此，過去 6 個月看著進展的速度，我對其中一些事情的信念也受到了考驗。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=979s" target="_blank" rel="noopener noreferrer">16:19</a> 在某些狹義的層面上，像是數學推理肯定算，就我看來，我們現在已經擁有超級智慧了，而我原本沒想到會來得這麼快。如果我推演未來 1 到 2 年以類似的速度進展，我認為在世界的現況以及公司、政府和社會層面的對齊都不做任何改變的情況下，我們就會面臨這種局面，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1009s" target="_blank" rel="noopener noreferrer">16:49</a> 那麼在我看來，如果對我們目前的做事方式不作任何改變，是行不通的。這些系統能力提升得如此之快，如果我們想堅持我剛才提到的那兩件事，我們就必須改變我們對今後如何為進展控速的想法。人們對此有非常強烈的看法。我很好奇，如今這場辯論在 OpenAI 內部是如何展開的？</p>
+<h2 id="sec-7">章節 7：資安與未來風險（17:15）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1038s" target="_blank" rel="noopener noreferrer">17:18</a> 我想說的是，越多人看到並感受到模型變得多厲害，辯論中的分歧就越小，越多人會覺得，好吧，我們思考未來的策略，以及如何做出我們想要的安全保證時，做法必須和過去有些不同了。我意識到 OpenAI 內部的許多爭論，或者 OpenAI 內部的許多意見分歧——我認為這也是理解社會意見分歧的一個很好的借鏡——在於</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1072s" target="_blank" rel="noopener noreferrer">17:52</a> 過去有許多關於模型會變得多厲害、速度有多快的爭論，後來被重新框架成關於何謂正確策略的爭論。一旦這個爭論有了答案，大家認知到「好吧，模型即將變得極其強大」，那麼在「我們該如何應對」的問題上分歧就變少了。但依然有一些。你最近在聯合國談到了 AI 安全，並強調了政府在監管 AI 方面的重要性。但傳統上，政策與科技變革的步伐相當不同。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1104s" target="_blank" rel="noopener noreferrer">18:24</a> 那麼你認為 AI 實驗室與政府有哪些可以更好合作的方式？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1116s" target="_blank" rel="noopener noreferrer">18:36</a> 我其實對目前的發展趨勢感到相當滿意。我之前並不是……不久前，我還認為大多數政府中的大多數人都沒有足夠嚴肅看待這件事。過去幾個月情況改變了，現在我認為討論正在——我們會看看是否真的有實質作為，但是</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1136s" target="_blank" rel="noopener noreferrer">18:56</a> 我之前認為好的結果不太可能順著軌跡發生，但現在我認為大概會。還有關於個人或組織層面的 AI 安全問題。大眾或企業領導人今天可以做些什麼，好讓自己為 AI 的潛在風險做更充分的準備？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1156s" target="_blank" rel="noopener noreferrer">19:16</a> 這牽涉到非常多層面。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1160s" target="_blank" rel="noopener noreferrer">19:20</a> 我想其中一點，為了不列出 30 件事的冗長清單，就是這個資安……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1171s" target="_blank" rel="noopener noreferrer">19:31</a> 我甚至不知道該用什麼足夠具戲劇張力的詞彙，但撲面而來的問題，我認為仍然是 我們作為組織領導人、國家或個人，尚未嚴肅看待的事。今年稍早曾有過像是 Mythos 恐慌之類的時刻，不管大家怎麼稱呼它，我認為情況確實有些好轉。例如大家確實修補了一些漏洞，但這又是另一種人們沒有真正直覺理解指數型成長的情況。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1203s" target="_blank" rel="noopener noreferrer">20:03</a> 情況就像是，好吧，有這些模型，它們能找出許多安全漏洞。那些可能就是所有存在的安全漏洞，或是模型能找到的所有安全漏洞了。而且我認為大多數人並沒有意識到：好吧，模型會變得聰明得多。它們可能可以找到漏洞，比如極其離譜的漏洞，超出我們認為駭客能做到的常規威脅模型之外的漏洞，硬體層級的瘋狂問題等等。於是大家修復了一些漏洞，而資安專業人士依然感到恐慌，資安長（CISO）依然感到恐慌。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1240s" target="_blank" rel="noopener noreferrer">20:40</a> 但整體而言，我認為大多數組織領導人或多或少已經不再那麼關注了。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1246s" target="_blank" rel="noopener noreferrer">20:46</a> 而模型還在持續進步。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1252s" target="_blank" rel="noopener noreferrer">20:52</a> 而且我不再認為我們能夠光靠修補所有漏洞來解決問題。我認為我們必須徹底轉變防禦模型，改用相同的技術來打造某種新型防禦盾。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1265s" target="_blank" rel="noopener noreferrer">21:05</a> 我認為這是一個巨大的安全與資安問題，而我對它受到的關注相對如此之少感到有些震驚。回到這個房間裡的人，身為史丹佛商學院的學生，我們就在打造 AI 未來的人身邊，但我們自己適合的位置並不總是清晰。那麼對於我們該如何塑造未來的樣貌，你會給我們什麼建議？</p>
+<h2 id="sec-8">章節 8：AI 時代的職涯建議（21:29）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1296s" target="_blank" rel="noopener noreferrer">21:36</a> 我坦白的看法是，它不會……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1301s" target="_blank" rel="noopener noreferrer">21:41</a> 它不會像人們想像的那麼快變得完全不同。沒錯，今天由人完成的大量任務，將會被做得更好、更便宜、更快，這千真萬確。你知道，是以完全不同的方式由 AI 來做。而且同樣千真萬確的是，目前大批的工作——至少以今天的做法來說——將完全由 AI 來做。觀察過去 10 天數學界的反應其實很有意思。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1334s" target="_blank" rel="noopener noreferrer">22:14</a> 你知道，第 0 天的反應是：「這是假的。」第 1 天的反應是：「我們完蛋了，我們的領域完了，我們正在叫研究生換主修。」</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1352s" target="_blank" rel="noopener noreferrer">22:32</a> 第 3 天的反應大概是：「OpenAI 做出這個太可怕了，任何人都不應該被允許——</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1359s" target="_blank" rel="noopener noreferrer">22:39</a> 如果這是理解更多數學的代價，我們不想要。」但到了大概第 5 天，情況有了很大的轉變，我開始聽到數學家們說：「是的，有一種數學工作結束了，但我們大部分做的事並不是解決千禧年大獎難題。我們大多數人從來沒做過。我們大部分做的是弄清楚如何理解知識、如何傳達知識，以及如何以人類能理解的方式呈現知識。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1390s" target="_blank" rel="noopener noreferrer">23:10</a> 我們現在看到很多人說，其實我會有一份不同、但希望更好的數學家職涯。我明白今後 AI 將在很大程度上推動數學發現，但在思考該研究什麼、它代表什麼意義、如何呈現、如何解釋、如何寫出漂亮的證明，以及如何做所有這些其他事情方面，我認為將會有一整套全新的事物出現。那是我認為大家見證過一個領域走完這個循環最快的一次，但類似的情況在其他領域發生得比較慢。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1426s" target="_blank" rel="noopener noreferrer">23:46</a> 你知道，我相信你們很多人都看過過去兩年發生的事，程式設計師說「我們的工作已經完了」，變成實際上看起來我們反而會繼續付越來越高的薪水給能讓電腦做事的人。只是工作的日常內容會有所不同。顧問經歷了一段時期，當時他們覺得「這徹底完了」，接著他們發現，實際上無論 AI 模型多擅長製作精美的 PowerPoint 簡報，雖然模型確實很擅長，但人們真正想要的是與另一個人互動，而且實際上幾乎沒有人想要 AI 顧問跑來告訴他們該怎麼做。而且……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1463s" target="_blank" rel="noopener noreferrer">24:23</a> 你懂我的意思。這種情況會不斷發生。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1468s" target="_blank" rel="noopener noreferrer">24:28</a> 所以我不認為會出現許多人所說的那種工作世界末日。在人們執行的任務以及某些工作類型上，短期內會有大量的轉換。但如果你現在正要步入社會去開展某項事業，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1489s" target="_blank" rel="noopener noreferrer">24:49</a> 我認為你會希望在變革最劇烈的時刻開啟職涯，並且希望擁有最開放的競爭舞台。我認為當地面劇烈震動時，具有高度潛力、幹勁、想法、新視角和新技能的人往往能表現得相對最好。我長期對 MBA 學生感到失望的是，他們總是只想去做大約 5 年前很酷的事，而不是去做新鮮事。而我認為現在是去做新鮮事的大好時機。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1521s" target="_blank" rel="noopener noreferrer">25:21</a> 所以去做新鮮事，即使 AI 是當下正熱門的事物。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1528s" target="_blank" rel="noopener noreferrer">25:28</a> 是的，我是說，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1532s" target="_blank" rel="noopener noreferrer">25:32</a> 我認為現在不是</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1536s" target="_blank" rel="noopener noreferrer">25:36</a> 創辦另一個 OpenAI 翻版的好時機。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1542s" target="_blank" rel="noopener noreferrer">25:42</a> 但我認為有很多公司可以建立在 OpenAI 發布到世界的技術之上，我希望它們會比 OpenAI 規模更大、更重要得多。</p>
+<h2 id="sec-9">章節 9：人的潛能與價值（25:52）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1552s" target="_blank" rel="noopener noreferrer">25:52</a> 我現在想把話題轉向 AI 對我們身為人類的本質以及未來潛能的影響。AI 讓人在沒有先前經驗的情況下，幾乎能打造任何東西。在這樣的世界裡，即使 AI 能代勞，人們仍然應該為自己學習做些什麼？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1574s" target="_blank" rel="noopener noreferrer">26:14</a> 舉個例子，有件事有人向我保證，就算有電腦，我也必須自己學會，我的二年級老師就是這麼說的。老師完全確信我一定得學會寫草寫體。我大概算是最後一代必須學寫草寫體的學生。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1593s" target="_blank" rel="noopener noreferrer">26:33</a> 我心想：「我以後再也用不到這個了。我非常篤定。」我簽名時甚至都不用草寫體。我心想：「我就是絕不……」今天如果非寫不可，我大概也寫不出草寫體了。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1607s" target="_blank" rel="noopener noreferrer">26:47</a> 我當時心想：「如果你讓我學這個是因為，你知道，我的字跡很難看，而且需要學習精細動作技能之類的，你知道，無論 7 歲小孩會怎麼表達，我都還能相信。但如果你認為我真的會為了草寫體本身而需要學習草寫體，那我可不信。而我的老師說：「不，你要當一個能正常參與社會的人，就會需要這個。你必須會寫草寫體。」好吧。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1633s" target="_blank" rel="noopener noreferrer">27:13</a> 然後幾年後，另一位老師說：「你必須學會寫作。」我說：「我根本不想當作家。」那位老師說：「嗯，那沒關係，但寫作主要是學習如何思考的重要工具。」我說：「我要當數學家。」</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1659s" target="_blank" rel="noopener noreferrer">27:39</a> 老師說：「嗯，你仍然必須學習如何思考，而且你仍然必須學習如何組織想法。即使你長大後從不寫給別人讀，學習如何思考仍然是一項重要的技能。」然後</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1676s" target="_blank" rel="noopener noreferrer">27:56</a> 我的心得是，這兩件事都帶來了重要的啟發。學習有助於思考的技能，仍然</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1686s" target="_blank" rel="noopener noreferrer">28:06</a> 具有極高的價值。學習顯然會屬於機器領域且不被人們看重的技能，顯然是沒有價值的。這些都蠻顯而易見的，對吧？所以我認為大多數人在大方向上會同意，我們仍然應該學習這類通用的事物。我們不該去學 AI 將會做得非常好的事情。但接著就會產生一個問題：我們培養了通用技能，進行了身為人的鍛鍊，未來還有什麼會留在人類的領域？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1717s" target="_blank" rel="noopener noreferrer">28:37</a> 第一點，我認為雖然顯而易見但值得說明的是，人的價值因其身為人而具有內在價值。我們似乎真的不在乎機器為了自己的目的在做什麼，而我認為我們不在乎是一件好事。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1734s" target="_blank" rel="noopener noreferrer">28:54</a> 而且我認為無論 AI 變得多強，情況都將繼續如此。你知道，在某種意義上，科學史就是人類的主角心態接連受挫的歷史。你知道，我們曾經認為太陽繞著地球轉。以為我們真的就處在那個中心，後來才意識到還有整個太陽系，接著是整個銀河系，如此不斷擴展，直到多元宇宙，而真的……你得瞇著眼看……才能看出為什麼人類處於中心。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1764s" target="_blank" rel="noopener noreferrer">29:24</a> 但我們覺得自己就在重要事物的正中心，而且我們肯定是自己故事的中心。我認為這很棒，而且我認為這會持續下去。而且我認為，無論 AI 從能力角度走得多遠，只要我們把安全做好，只要我們不發生這類失控事件，人類的價值對我們所有人來說都會很重要，因為背後有一個人。工作之所以重要是因為有人在做，而我們永遠都會這樣在乎。因此弄清楚如何陪伴、如何對他人有用、如何為他人創造具有核心重要性的事物，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1800s" target="_blank" rel="noopener noreferrer">30:00</a> 那將永遠延續下去。而且我認為學習如何做到這一點，是一項出乎意料可以學會的技能。</p>
+<h2 id="sec-10">章節 10：文藝復興還是工業革命（30:06）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1806s" target="_blank" rel="noopener noreferrer">30:06</a> 假設我們把 AI 的分配與發展都做對了。你認為目前未來面臨的哪個問題，人們仍然大幅低估了我們解決它的能力？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1819s" target="_blank" rel="noopener noreferrer">30:19</a> 嗯……選在這個時間點問很有趣，因為我過去幾天和大家交談，連懷疑論者都覺得：「你知道嗎？事到如今我懂了。就像 AI 會解決每一塊知識。」而……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1836s" target="_blank" rel="noopener noreferrer">30:36</a> 我不完全同意那種說法，但就大方向而言，我有點同感。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1845s" target="_blank" rel="noopener noreferrer">30:45</a> 你知道，像是擁有美好人生意味著什麼，以及讓每個人都有選擇、自由與彈性，依然會犯錯，但當人們回顧、拉遠視角時能說：「對，我過得很棒。」我認為那仍然會很難。我認為在某種意義上，那總是很難。也許那很難這件事本身很重要。我抱持希望，隨著接下來這幾年推進，我們能更大幅地往感覺像新文藝復興、而不是新工業革命的方向推進。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1877s" target="_blank" rel="noopener noreferrer">31:17</a> 但我認為目前 AI 領域的很多精力一直都朝向工業革命。我們要將一切自動化。我們就是要完美地把人類排除在方程式之外，讓經濟運轉得更快更好，然後發一些錢給每個人，由 AI 來決定什麼重要。而人就只會是機器裡運轉得更順暢的一顆齒輪，而那台機器就會變成某種不可思議的摩洛（Moloch）。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1906s" target="_blank" rel="noopener noreferrer">31:46</a> 我希望我們能把這件事做對。你認為在文藝復興版本的未來與這種工業革命風格的未來之間，最大的阻礙是什麼？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1926s" target="_blank" rel="noopener noreferrer">32:06</a> 我其實……我認為人們想要文藝復興的版本。我認為人們想要創造力、探索事物的能力、發現知識的能力，以及擁有一片像是完全敞開的空間，充滿 新的自由、方向與探索。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1947s" target="_blank" rel="noopener noreferrer">32:27</a> 我認為社會與經濟的許多壓力 都如此偏向無情的效率，以致於很可能會 必須有某種力量來對抗它，來自企業 或政府，或全體人民。</p>
+<h2 id="sec-11">章節 11：基礎設施與人生清單（32:47）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1967s" target="_blank" rel="noopener noreferrer">32:47</a> 我們現在要交給現場觀眾提問。好。嗨山姆，我是（姓名略）。我是 2027 級的 MBA 學生，來自灣區。我的問題是，OpenAI 在 2024 年和 2025 年有遠見地大量投資算力，而我認為這項投資在 Astra 和 ChatGPT 的速度上獲得了回報。你們現在正在押注什麼樣的基礎設施，以推進 OpenAI 的使命？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1998s" target="_blank" rel="noopener noreferrer">33:18</a> 機器人？我想大家談了很多 AI 模型的遞迴式自我改進。還有另一個循環，也就是如果你有能製造更多機器人的機器人，接著有能有效打造更多資料中心的資料中心，包含營運晶圓廠設施等等，你就能產出多得多的算力，一路延伸到建造更多發電廠。但我認為這件事的重要性，可以說跟 AI 研究中那種潛在的遞迴循環一樣大，或幾乎一樣大。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2030s" target="_blank" rel="noopener noreferrer">33:50</a> 它受到的討論少得多，所以這是其一。另一個是我們打造了自己的晶片 Jalapeño，而且在它之後我們還有另一款即將推出，從每瓦智慧的角度來看，相較市面上其他任何東西，都是巨大的勝利。我們會繼續在那方面推進。隨著模型變得越來越聰明，它們將能協助我們設計越來越聰明的晶片。所以這又是這類循環的另一種。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2056s" target="_blank" rel="noopener noreferrer">34:16</a> 我們在整個供應鏈上投入大量資金，像是晶圓廠、電力、資料中心裡的所有設備，所以我們會做很多這方面的事，但那大概是三大領域。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2068s" target="_blank" rel="noopener noreferrer">34:28</a> 嗨，山姆。我是（姓名略），來自印度的 27 級 MBA 學生。在你的 30 歲生日時，你寫了一份人生經驗清單，名為〈日子很長，十年很短〉（The Days Are Long But the Decades Are Short）。現在你 41 歲並且當了父親，我很好奇，你會對那份清單做出什麼改變？有沒有哪幾條是你會重寫的？我記得我寫過那篇。我不記得裡面的所有內容，但我現在可以講一個非常簡短的版本。我想那篇相當長。它會像是：組建家庭、建立對你很重要的事物、花時間享受樂趣並做讓你感到充實的事、保持健康。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2104s" target="_blank" rel="noopener noreferrer">35:04</a> 它會非常簡短。我有點認為，這種情況下，當老人看起來過得不錯時，你就直接聽他們的。</p>
+<h2 id="sec-12">章節 12：對齊與開源（35:13）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2113s" target="_blank" rel="noopener noreferrer">35:13</a> 你好山姆，謝謝你抽空前來。我叫（姓名略）。我是 2028 級的學生。我來自秘魯。我的問題是，你在 2020 年時對於 AI 將如何發展曾抱持什麼堅定信念，後來卻被證明是錯的，而這又如何改變了你經營 OpenAI 的方式？你說從什麼時候？從 2020 年。2020 年底。好的。好。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2142s" target="_blank" rel="noopener noreferrer">35:42</a> 我原本不認為我們能夠做出這樣程度的模型——</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2150s" target="_blank" rel="noopener noreferrer">35:50</a> 我想更好的說法是，我原以為對齊問題會更困難。從現在開始，它可能仍然會非常困難。事實上，我懷疑它會變得困難得多，而且我也認為，就我們接下來的走向而言，它真的無比重要。但事實是，我們已經做出了在某些重要面向超越人類——在某些重要面向遠超人類的模型，而且對齊到目前為止比預期更容易，我本來會相當肯定地說，這兩者之中有一個是錯的。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2180s" target="_blank" rel="noopener noreferrer">36:20</a> 現在，我擔心的一件事是，有些人看著我們目前的成果就說，到了 n 加 1 階段它還會繼續這樣發展，對齊會一直很容易。而我認為，我完全不覺得事情顯然會是那樣。而且我也認為對齊出錯的潛在代價已經大幅增加。我越來越相信，在一段時間內我們可以對這些系統進行沙箱隔離，而且我認為我們可以基於沙箱做出一些安全保證，然後當那行不通時，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2210s" target="_blank" rel="noopener noreferrer">36:50</a> 因為模型變得太聰明，我們根本無法理解沙箱究竟意味著什麼，那麼我認為可監控性還能奏效一陣子。但最終——這也是我稍早談到智慧速限的原因——我認為實際上除了對齊之外，沒有別的管用。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2229s" target="_blank" rel="noopener noreferrer">37:09</a> 而且必須是我們足夠聰明能理解、且能真正有信心地說「運行這個模型沒問題，人類將繼續掌控未來」的那種對齊。而我擔心的是……全球有些 AI 研發團隊鑑於對齊至今如此容易，對它信心滿滿，以致於太願意一路往前衝。嗨山姆，感謝你前來。我是（姓名略），27 級 MBA 學生。你最近在 Decoded podcast 上表示，你認為世界應該接受發生一些壞事，以換取 AI 帶來的益處。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2266s" target="_blank" rel="noopener noreferrer">37:46</a> 當你思考你兒子即將在其中成長的世界時，具體而言你認為我們應該接受哪些壞事，又在何處劃下界線？好。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2276s" target="_blank" rel="noopener noreferrer">37:56</a> 我真希望我當初換個方式來表達那個回答。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2281s" target="_blank" rel="noopener noreferrer">38:01</a> 我原本的意思在我腦海中顯得如此理所當然且毫無爭議，但我明白為什麼傳達出來不是那樣。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2291s" target="_blank" rel="noopener noreferrer">38:11</a> 人們將會擁有開源模型，而這些模型將會產出一堆仇恨言論、在網路論壇上搗亂挑釁，還會入侵某些系統，並且會……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2303s" target="_blank" rel="noopener noreferrer">38:23</a> 試圖代表它們的使用者以某些方式進行詐騙。舉例來說，將會出現新一代的電話詐騙，比上一代要嚴重得多。而我認為有人會說，如果那樣的事會發生，那我們就禁止所有開源模型。我當時在那個 podcast 中想表達的觀點——但我認為被剪掉了——是禁止所有開源模型 會讓社會的創新與自由付出極高的代價，我們不應該這麼做。但如果你要有開源模型，而且如果你要讓人們在自己的電腦上本機運行這些模型，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2337s" target="_blank" rel="noopener noreferrer">38:57</a> 無論你在全球 agent 監控方面有多厲害，總會有一些你希望沒有人做過的事情發生。而我不會接受「完全不要開源模型」這樣的取捨。現在，存在某個門檻——這也是我認為社會需要辯論的地方——超過這個門檻，模型能造成的危害就大到我們不能給予人們隨心所欲使用它們的自由。明顯的例子是，任何人都不該被允許癱瘓網際網路。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2367s" target="_blank" rel="noopener noreferrer">39:27</a> 任何人都不應該能對他人造成人身傷害。任何人都不應該能夠</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2375s" target="_blank" rel="noopener noreferrer">39:35</a> 製造出新型的生物恐怖攻擊並釋放到世界上。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2383s" target="_blank" rel="noopener noreferrer">39:43</a> 我從那件事學到的教訓之一是，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2387s" target="_blank" rel="noopener noreferrer">39:47</a> 如果你告訴人們要接受發生壞事，哪怕只有一點點，他們只會說：「我完全不想要有任何壞事發生」，而且他們會忽略箇中的細微之處，比如自由同樣重要，真正關鍵的是我們在何處劃下界線。像是如果我們回到電話詐騙的例子，你可以直接把所有電話都拿走，這樣就再也不會有人遇到電話詐騙，而我們認為那並不值得。所以那是我試圖表達的觀點。我認為我們整個社會不該冒巨大的風險，事實上，這就是為什麼我認為 AI 與以往任何技術都不同的原因，那就是它在一個人所能造成的危害程度上邁出了嶄新的一步。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2420s" target="_blank" rel="noopener noreferrer">40:20</a> 隨之而來的是一系列關於社會必須如何適應、以及我們確實必須放棄某些自由的令人不安的後果。但是……我認為這不代表我們不該被允許在電腦上運行類神經網路。</p>
+<h2 id="sec-13">章節 13：軟體護城河與開放權重（40:34）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2434s" target="_blank" rel="noopener noreferrer">40:34</a> 嗨，山姆。我是（姓名略），2028 級 MBA 學生。謝謝你今天來到這裡。我是以軟體開發者的背景進來的。所以我的問題之一是，隨著模型能力不斷提升，我們看到的問題之一是，軟體護城河正日益被越來越強的 AI 模型吞噬。那麼對於下一代初出茅廬的創業者，或者泛指軟體開發者，你會建議在軟體領域裡建立什麼樣的護城河，我們可以往什麼樣的技術或軟體投入，在未來打造新創公司或創業事業？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2473s" target="_blank" rel="noopener noreferrer">41:13</a> 大致來說，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2478s" target="_blank" rel="noopener noreferrer">41:18</a> 我認為歷史上並沒有那麼多軟體護城河。還有其他種類的護城河。像是網路效應，比如 Facebook 之類的。有規模效應。像 Google；還有資料護城河，就像許多企業軟體公司擁有的那樣。但軟體本身從來都不是非常強的護城河。你用它來取得暫時的優勢，以建立企業傳統的護城河之一。我有點覺得這種情況只會繼續照同樣的方式走下去。我是（姓名略）。我是 MBA 二年級生。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2508s" target="_blank" rel="noopener noreferrer">41:48</a> 我也是 OpenAI 基金會的幕僚長。很酷。（觀眾笑聲）只是順便提一下。（觀眾笑聲）對，我有一個跟這個相關、算是接著問的問題。隨著 AI 變得越來越強大，在讓這項技術廣泛普及到全人類的同時，又要確保它能被安全地開發與部署，這兩者之間的矛盾正日益加劇。所以我想知道，你如何看待開放權重與封閉權重模型之間的權衡？而且必須具備什麼條件，你才會放心將最強大的模型開放權重？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2545s" target="_blank" rel="noopener noreferrer">42:25</a> 嗯，我認為在達到相當高的能力水準之前，開放權重模型對社會來說是非常重要的。而社會究竟願意為開放權重模型的好處承受多少損害，這個問題在接下來幾年裡將會受到非常激烈的辯論。這也是個會移動的目標，因為社會建立的韌性越多——例如我想 OpenAI 基金會可望投入大量工作，協助防範未來的大流行病，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2576s" target="_blank" rel="noopener noreferrer">42:56</a> 然後也許世界就能擁有更強大的生物模型，因為我們的應變能力會比今天更好。所以這不是個靜態的問題。隨著世界利用 AI 建立起更多的韌性，這個問題也會不斷演進。但我並不……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2595s" target="_blank" rel="noopener noreferrer">43:15</a> 我不認為我們能負責任地開源我們目前內部最好的模型。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2603s" target="_blank" rel="noopener noreferrer">43:23</a> 近期內都不行。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2606s" target="_blank" rel="noopener noreferrer">43:26</a> 我試著在想世界上必須發生什麼改變，像是……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2611s" target="_blank" rel="noopener noreferrer">43:31</a> 網際網路運作方式所依據的整個資安防禦模型都得改變。我們得建立起這個生物防護層，另外還有一長串其他的東西。現在，這個問題之所以有趣又迫切，是因為：那個模型到底領先多遠——有人真的相信它領先於會開源同等級模型的人很多嗎？不會非常多。所以我認為，不管封閉原始碼的這種滾動優勢是什麼，</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2642s" target="_blank" rel="noopener noreferrer">44:02</a> 封閉權重模型用來協助世界建立韌性、抵禦我認為世界確實應該擁有的開放模型，這件事超級重要，也是—— 我不知道你在 OpenAI 基金會工作。這不是安排好的，不過我收下了。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2659s" target="_blank" rel="noopener noreferrer">44:19</a> 我認為我們現在擁有全世界最大的基金會很酷，部分原因是我們可以全力衝刺，協助世界建立防禦盾。</p>
+<h2 id="sec-14">章節 14：未來的組織（44:28）</h2>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2668s" target="_blank" rel="noopener noreferrer">44:28</a> 我叫（姓名略）。首先，謝謝你今天來到這裡。去年你上大衛・裴瑞爾的 How I Write podcast 時，分享了你的類比筆記系統：整天隨身帶著一本筆記本，把想法寫下來。在你的生活（無論個人或專業）中，是否有任何領域你會試著保持較低科技、更偏類比，以保留你身為一個人及專業人士所擁有的某些技能？而你會建議我們怎麼走同樣的路？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2705s" target="_blank" rel="noopener noreferrer">45:05</a> 就拿筆記本來說，我想我在這點上就是錯的，我大概應該改用電腦，但這是長年的老習慣。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2715s" target="_blank" rel="noopener noreferrer">45:15</a> 我想真正重要的類比事物，是跟……說到老人家總是對的，就是花很多時間和別人相處、一起吃飯、多走進大自然、運動。有一長串類比的事物長期以來都有效，但我想那都是些顯而易見的事。至於想說「噢，有人用筆記本寫字，他們大概就只是錯了」。那一件你大概可以直接放掉。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2744s" target="_blank" rel="noopener noreferrer">45:44</a> 山姆，我今天最後有一個問題想問你。在 GSB，我們談論改變人生、改變組織，以及改變世界。當你審視當今世界，你認為未來的領導者需要專注在什麼上，才能推動改變？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2761s" target="_blank" rel="noopener noreferrer">46:01</a> 我是說，我非常顯而易見的答案就是 AI。如果我們從中挑也許最簡單的一個，或者最好著手的一個，也就是你說的改變組織，我認為現在有可能設計出另一種截然不同的組織，其中每個人都相對配有大量 AI，這個程度之大，還有……</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2788s" target="_blank" rel="noopener noreferrer">46:28</a> 我想這就是一個還沒被充分探索的研究領域，也就是在今天要建立盡可能最好的組織，究竟意味著什麼。我想那是非常、非常不一樣的。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2801s" target="_blank" rel="noopener noreferrer">46:41</a> 這純粹是推測。我從來沒有研究過，不知道這是不是真的，但我的感覺是，大多數組織的設計其實是從模仿軍隊來的，我們建立了這種非常階層式的指揮與控制體系。而要規模化到某個程度以上，那是我們當時唯一有的、能做到這件事的範例。組織似乎都帶有一些這種特質。然後過去幾十年間，科技業和其他產業也在這個基礎上創新，有些許改進，但仍然是受同一個基本原則啟發。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2833s" target="_blank" rel="noopener noreferrer">47:13</a> 而觀察這些 AI 系統，有一件事讓我覺得極其有趣：如果你看看，我想是 10,000 個——解出納維－斯托克斯（Navier-Stokes）的那 10,000 個 agent，它們協作的方式，不像我所能想像的任何組織。沒有領導者。沒有人爭功。有著完美的對齊。沒有爭吵。所有人都只是努力要解決這個目標。人類身上有種美麗的缺陷，意味著我們永遠做不到那樣。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2865s" target="_blank" rel="noopener noreferrer">47:45</a> 人們還是會以許多和過去相同的方式工作。而且顯然我也不想活在那樣一個沒有情感的世界。但我想這其中依然有值得借鑑之處。而正如我們在 OpenAI 內部觀察到真正擁抱 AI 且規模小得多的團隊改變了他們的工作方式，我相信你們會是去摸索如何設計新組織的人，而我想世界真的會從中受益。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2896s" target="_blank" rel="noopener noreferrer">48:16</a> 山姆，今天非常榮幸能和你對談。謝謝。請大家和我一起感謝山姆・奧特曼。（掌聲）</p>
+</article></main>
+<footer>
+<p>本頁為非官方繁體中文翻譯，依頻道上傳的英文字幕由 AI 模型翻譯與審校，未經人工校稿，也未對照原音；提問學生的姓名已略去。原影片版權屬 Stanford Graduate School of Business，僅供閱讀與研究。若有出入，以原影片為準。</p>
+</footer>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大檢視"><button type="button" aria-label="關閉放大檢視">關閉（Esc）</button><img src="" alt=""></div>
+<script>
+(function(){
+  var box=document.getElementById('lightbox'), big=box.querySelector('img'), btn=box.querySelector('button'), last=null;
+  function open(img){last=img;big.src=img.currentSrc||img.src;big.alt=img.alt;box.classList.add('is-open');btn.focus();}
+  function close(){box.classList.remove('is-open');big.removeAttribute('src');if(last){last.focus();}}
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('click',function(){open(img);});
+    img.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(img);}});
+  });
+  box.addEventListener('click',function(e){if(e.target===box||e.target===btn){close();}});
+  document.addEventListener('keydown',function(e){
+    if(!box.classList.contains('is-open'))return;
+    if(e.key==='Escape'){close();}
+    if(e.key==='Tab'){e.preventDefault();btn.focus();}
+  });
+})();
+</script>
+</body>
+</html>
