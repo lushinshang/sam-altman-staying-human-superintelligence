@@ -124,6 +124,45 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
   h2{font-size:1.35rem}
   section.summary-card{padding:4px 16px 8px}
 }
+
+/* 版面強化 r1：閱讀進度、章節進場、導覽當前章、狀態標籤、回到頂端 */
+.read-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--accent);z-index:60;pointer-events:none}
+nav.toc a[aria-current="true"]{background:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){nav.toc a[aria-current="true"]{color:#10211d}}
+.js-reveal .rv{opacity:0;transition:opacity .6s ease,transform .6s ease}
+.js-reveal .rv:not(figure){transform:translateY(14px)}
+.js-reveal .rv.rv-in{opacity:1}
+.js-reveal .rv.rv-in:not(figure){transform:none}
+table td.st{white-space:nowrap}
+.badge{display:inline-block;padding:2px 10px;border-radius:12px;font-size:13.5px;line-height:1.6;white-space:normal;border:1px solid var(--line);background:var(--note);color:var(--ink)}
+.badge.ok{background:#e1f3ee;border-color:#9fd3c6;color:#0b5c51}
+.badge.part{background:#fdf0d8;border-color:#e3c27d;color:#6b4a0a}
+.badge.warn{background:#fbe6e3;border-color:#e2a8a0;color:#7a2a20}
+@media (prefers-color-scheme: dark){
+ .badge.ok{background:#17332e;border-color:#2c6b5f;color:#8fe0cf}
+ .badge.part{background:#3a3020;border-color:#6d5a2e;color:#f0d28f}
+ .badge.warn{background:#3b2220;border-color:#7a4540;color:#f2b3ab}}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:color-mix(in srgb,var(--note) 70%,transparent)}
+.to-top{position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;z-index:55}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* r2：觸控目標、回頂端鈕、手機圖提示、首圖視差、章節標題裝飾條 */
+article a[href*="youtu"]{position:relative}
+article a[href*="youtu"]::after{content:"";position:absolute;inset:-12px -8px}
+@media (max-width:640px){
+  .to-top{width:36px;height:36px;right:10px;bottom:10px;font-size:15px;opacity:0}
+  .to-top.show{opacity:.85}
+  figure.section-figure picture{position:relative}
+  figure.section-figure picture::after{content:"點圖放大";position:absolute;right:8px;bottom:8px;font-size:12px;line-height:1;padding:5px 8px;border-radius:999px;background:color-mix(in srgb,var(--ink) 78%,transparent);color:var(--bg);pointer-events:none}
+}
+.hero-figure picture{display:block;will-change:transform}
+.js-reveal h2.rv{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 3px;padding-bottom:6px}
+.js-reveal h2.rv.rv-in{background-size:72px 3px;transition:background-size .8s ease .2s,opacity .6s ease,transform .6s ease}
+
+/* r3：trace 圖逐列顯現（steps 動畫，尊重 reduced-motion：JS 在該情況下不加 .rv） */
+.js-reveal figure.rv-trace{clip-path:inset(0 0 100% 0)}
+.js-reveal figure.rv-trace.rv-in{clip-path:inset(0 0 0 0);transition:clip-path 1.6s steps(8,end),opacity .6s ease}
 </style>
 </head>
 <body>
@@ -134,10 +173,10 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p class="eyebrow">全文譯本（非官方）</p>
 <h1>Sam Altman 史丹佛商學院訪談全文譯本（非官方）</h1>
 <p class="lede">Stanford GSB〈View From The Top〉，2026-10-21 上傳</p>
-<p class="byline">原文：Stanford Graduate School of Business，2026-10-21　譯本整理：2026-10-31</p>
+<p class="byline">原文：Stanford Graduate School of Business，2026-10-21　譯本整理：2026-11-01</p>
 </header>
 <main id="main"><article>
-<aside class="note"><p>本譯文由 AI 模型依頻道上傳的英文字幕翻譯並審校，不是人類翻譯，也沒有經過人工校稿或對照原音；本頁不標說話者，提問學生的姓名已略去。原影片版權屬原頻道，僅供閱讀與研究，若有出入以影片為準。</p></aside>
+<aside class="note"><p>本譯文由 AI 模型依頻道上傳的英文字幕翻譯並審校，不是人類翻譯，也沒有經過人工校稿或對照原音；本頁不標說話者，提問學生的姓名與個人背景已略去。原影片版權屬原頻道，僅供閱讀與研究，若有出入以影片為準。</p></aside>
 <p>原影片：<a href="https://www.youtube.com/watch?v=anAmTGcewX8" target="_blank" rel="noopener noreferrer">Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence</a>。對應的<a href="index.html">深度導讀</a>與<a href="player.html">雙語同步播放器</a>另附。</p>
 <hr>
 <h2 id="sec-1">章節 1：開場（00:00）</h2>
@@ -245,19 +284,19 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1926s" target="_blank" rel="noopener noreferrer">32:06</a> 我其實……我認為人們想要文藝復興的版本。我認為人們想要創造力、探索事物的能力、發現知識的能力，以及擁有一片像是完全敞開的空間，充滿 新的自由、方向與探索。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1947s" target="_blank" rel="noopener noreferrer">32:27</a> 我認為社會與經濟的許多壓力 都如此偏向無情的效率，以致於很可能會 必須有某種力量來對抗它，來自企業 或政府，或全體人民。</p>
 <h2 id="sec-11">章節 11：基礎設施與人生清單（32:47）</h2>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1967s" target="_blank" rel="noopener noreferrer">32:47</a> 我們現在要交給現場觀眾提問。好。嗨山姆，我是（姓名略）。我是 2027 級的 MBA 學生，來自灣區。我的問題是，OpenAI 在 2024 年和 2025 年有遠見地大量投資算力，而我認為這項投資在 Astra 和 ChatGPT 的速度上獲得了回報。你們現在正在押注什麼樣的基礎設施，以推進 OpenAI 的使命？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1967s" target="_blank" rel="noopener noreferrer">32:47</a> 我們現在要交給現場觀眾提問。好。嗨山姆，我是（姓名略）。（個人資料略）我的問題是，OpenAI 在 2024 年和 2025 年有遠見地大量投資算力，而我認為這項投資在 Astra 和 ChatGPT 的速度上獲得了回報。你們現在正在押注什麼樣的基礎設施，以推進 OpenAI 的使命？</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=1998s" target="_blank" rel="noopener noreferrer">33:18</a> 機器人？我想大家談了很多 AI 模型的遞迴式自我改進。還有另一個循環，也就是如果你有能製造更多機器人的機器人，接著有能有效打造更多資料中心的資料中心，包含營運晶圓廠設施等等，你就能產出多得多的算力，一路延伸到建造更多發電廠。但我認為這件事的重要性，可以說跟 AI 研究中那種潛在的遞迴循環一樣大，或幾乎一樣大。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2030s" target="_blank" rel="noopener noreferrer">33:50</a> 它受到的討論少得多，所以這是其一。另一個是我們打造了自己的晶片 Jalapeño，而且在它之後我們還有另一款即將推出，從每瓦智慧的角度來看，相較市面上其他任何東西，都是巨大的勝利。我們會繼續在那方面推進。隨著模型變得越來越聰明，它們將能協助我們設計越來越聰明的晶片。所以這又是這類循環的另一種。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2056s" target="_blank" rel="noopener noreferrer">34:16</a> 我們在整個供應鏈上投入大量資金，像是晶圓廠、電力、資料中心裡的所有設備，所以我們會做很多這方面的事，但那大概是三大領域。</p>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2068s" target="_blank" rel="noopener noreferrer">34:28</a> 嗨，山姆。我是（姓名略），來自印度的 27 級 MBA 學生。在你的 30 歲生日時，你寫了一份人生經驗清單，名為〈日子很長，十年很短〉（The Days Are Long But the Decades Are Short）。現在你 41 歲並且當了父親，我很好奇，你會對那份清單做出什麼改變？有沒有哪幾條是你會重寫的？我記得我寫過那篇。我不記得裡面的所有內容，但我現在可以講一個非常簡短的版本。我想那篇相當長。它會像是：組建家庭、建立對你很重要的事物、花時間享受樂趣並做讓你感到充實的事、保持健康。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2068s" target="_blank" rel="noopener noreferrer">34:28</a> 嗨，山姆。（個人資料略）在你的 30 歲生日時，你寫了一份人生經驗清單，名為〈日子很長，十年很短〉（The Days Are Long But the Decades Are Short）。現在你 41 歲並且當了父親，我很好奇，你會對那份清單做出什麼改變？有沒有哪幾條是你會重寫的？我記得我寫過那篇。我不記得裡面的所有內容，但我現在可以講一個非常簡短的版本。我想那篇相當長。它會像是：組建家庭、建立對你很重要的事物、花時間享受樂趣並做讓你感到充實的事、保持健康。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2104s" target="_blank" rel="noopener noreferrer">35:04</a> 它會非常簡短。我有點認為，這種情況下，當老人看起來過得不錯時，你就直接聽他們的。</p>
 <h2 id="sec-12">章節 12：對齊與開源（35:13）</h2>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2113s" target="_blank" rel="noopener noreferrer">35:13</a> 你好山姆，謝謝你抽空前來。我叫（姓名略）。我是 2028 級的學生。我來自秘魯。我的問題是，你在 2020 年時對於 AI 將如何發展曾抱持什麼堅定信念，後來卻被證明是錯的，而這又如何改變了你經營 OpenAI 的方式？你說從什麼時候？從 2020 年。2020 年底。好的。好。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2113s" target="_blank" rel="noopener noreferrer">35:13</a> 你好山姆，謝謝你抽空前來。我叫（姓名略）。（個人資料略）（個人資料略）我的問題是，你在 2020 年時對於 AI 將如何發展曾抱持什麼堅定信念，後來卻被證明是錯的，而這又如何改變了你經營 OpenAI 的方式？你說從什麼時候？從 2020 年。2020 年底。好的。好。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2142s" target="_blank" rel="noopener noreferrer">35:42</a> 我原本不認為我們能夠做出這樣程度的模型——</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2150s" target="_blank" rel="noopener noreferrer">35:50</a> 我想更好的說法是，我原以為對齊問題會更困難。從現在開始，它可能仍然會非常困難。事實上，我懷疑它會變得困難得多，而且我也認為，就我們接下來的走向而言，它真的無比重要。但事實是，我們已經做出了在某些重要面向超越人類——在某些重要面向遠超人類的模型，而且對齊到目前為止比預期更容易，我本來會相當肯定地說，這兩者之中有一個是錯的。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2180s" target="_blank" rel="noopener noreferrer">36:20</a> 現在，我擔心的一件事是，有些人看著我們目前的成果就說，到了 n 加 1 階段它還會繼續這樣發展，對齊會一直很容易。而我認為，我完全不覺得事情顯然會是那樣。而且我也認為對齊出錯的潛在代價已經大幅增加。我越來越相信，在一段時間內我們可以對這些系統進行沙箱隔離，而且我認為我們可以基於沙箱做出一些安全保證，然後當那行不通時，</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2210s" target="_blank" rel="noopener noreferrer">36:50</a> 因為模型變得太聰明，我們根本無法理解沙箱究竟意味著什麼，那麼我認為可監控性還能奏效一陣子。但最終——這也是我稍早談到智慧速限的原因——我認為實際上除了對齊之外，沒有別的管用。</p>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2229s" target="_blank" rel="noopener noreferrer">37:09</a> 而且必須是我們足夠聰明能理解、且能真正有信心地說「運行這個模型沒問題，人類將繼續掌控未來」的那種對齊。而我擔心的是……全球有些 AI 研發團隊鑑於對齊至今如此容易，對它信心滿滿，以致於太願意一路往前衝。嗨山姆，感謝你前來。我是（姓名略），27 級 MBA 學生。你最近在 Decoded podcast 上表示，你認為世界應該接受發生一些壞事，以換取 AI 帶來的益處。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2229s" target="_blank" rel="noopener noreferrer">37:09</a> 而且必須是我們足夠聰明能理解、且能真正有信心地說「運行這個模型沒問題，人類將繼續掌控未來」的那種對齊。而我擔心的是……全球有些 AI 研發團隊鑑於對齊至今如此容易，對它信心滿滿，以致於太願意一路往前衝。嗨山姆，感謝你前來。（個人資料略）你最近在 Decoded podcast 上表示，你認為世界應該接受發生一些壞事，以換取 AI 帶來的益處。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2266s" target="_blank" rel="noopener noreferrer">37:46</a> 當你思考你兒子即將在其中成長的世界時，具體而言你認為我們應該接受哪些壞事，又在何處劃下界線？好。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2276s" target="_blank" rel="noopener noreferrer">37:56</a> 我真希望我當初換個方式來表達那個回答。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2281s" target="_blank" rel="noopener noreferrer">38:01</a> 我原本的意思在我腦海中顯得如此理所當然且毫無爭議，但我明白為什麼傳達出來不是那樣。</p>
@@ -270,17 +309,17 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2387s" target="_blank" rel="noopener noreferrer">39:47</a> 如果你告訴人們要接受發生壞事，哪怕只有一點點，他們只會說：「我完全不想要有任何壞事發生」，而且他們會忽略箇中的細微之處，比如自由同樣重要，真正關鍵的是我們在何處劃下界線。像是如果我們回到電話詐騙的例子，你可以直接把所有電話都拿走，這樣就再也不會有人遇到電話詐騙，而我們認為那並不值得。所以那是我試圖表達的觀點。我認為我們整個社會不該冒巨大的風險，事實上，這就是為什麼我認為 AI 與以往任何技術都不同的原因，那就是它在一個人所能造成的危害程度上邁出了嶄新的一步。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2420s" target="_blank" rel="noopener noreferrer">40:20</a> 隨之而來的是一系列關於社會必須如何適應、以及我們確實必須放棄某些自由的令人不安的後果。但是……我認為這不代表我們不該被允許在電腦上運行類神經網路。</p>
 <h2 id="sec-13">章節 13：軟體護城河與開放權重（40:34）</h2>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2434s" target="_blank" rel="noopener noreferrer">40:34</a> 嗨，山姆。我是（姓名略），2028 級 MBA 學生。謝謝你今天來到這裡。我是以軟體開發者的背景進來的。所以我的問題之一是，隨著模型能力不斷提升，我們看到的問題之一是，軟體護城河正日益被越來越強的 AI 模型吞噬。那麼對於下一代初出茅廬的創業者，或者泛指軟體開發者，你會建議在軟體領域裡建立什麼樣的護城河，我們可以往什麼樣的技術或軟體投入，在未來打造新創公司或創業事業？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2434s" target="_blank" rel="noopener noreferrer">40:34</a> 嗨，山姆。（個人資料略）謝謝你今天來到這裡。（個人資料略）所以我的問題之一是，隨著模型能力不斷提升，我們看到的問題之一是，軟體護城河正日益被越來越強的 AI 模型吞噬。那麼對於下一代初出茅廬的創業者，或者泛指軟體開發者，你會建議在軟體領域裡建立什麼樣的護城河，我們可以往什麼樣的技術或軟體投入，在未來打造新創公司或創業事業？</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2473s" target="_blank" rel="noopener noreferrer">41:13</a> 大致來說，</p>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2478s" target="_blank" rel="noopener noreferrer">41:18</a> 我認為歷史上並沒有那麼多軟體護城河。還有其他種類的護城河。像是網路效應，比如 Facebook 之類的。有規模效應。像 Google；還有資料護城河，就像許多企業軟體公司擁有的那樣。但軟體本身從來都不是非常強的護城河。你用它來取得暫時的優勢，以建立企業傳統的護城河之一。我有點覺得這種情況只會繼續照同樣的方式走下去。我是（姓名略）。我是 MBA 二年級生。</p>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2508s" target="_blank" rel="noopener noreferrer">41:48</a> 我也是 OpenAI 基金會的幕僚長。很酷。（觀眾笑聲）只是順便提一下。（觀眾笑聲）對，我有一個跟這個相關、算是接著問的問題。隨著 AI 變得越來越強大，在讓這項技術廣泛普及到全人類的同時，又要確保它能被安全地開發與部署，這兩者之間的矛盾正日益加劇。所以我想知道，你如何看待開放權重與封閉權重模型之間的權衡？而且必須具備什麼條件，你才會放心將最強大的模型開放權重？</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2478s" target="_blank" rel="noopener noreferrer">41:18</a> 我認為歷史上並沒有那麼多軟體護城河。還有其他種類的護城河。像是網路效應，比如 Facebook 之類的。有規模效應。像 Google；還有資料護城河，就像許多企業軟體公司擁有的那樣。但軟體本身從來都不是非常強的護城河。你用它來取得暫時的優勢，以建立企業傳統的護城河之一。我有點覺得這種情況只會繼續照同樣的方式走下去。（個人資料略）</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2508s" target="_blank" rel="noopener noreferrer">41:48</a> （個人資料略）很酷。（觀眾笑聲）只是順便提一下。（觀眾笑聲）對，我有一個跟這個相關、算是接著問的問題。隨著 AI 變得越來越強大，在讓這項技術廣泛普及到全人類的同時，又要確保它能被安全地開發與部署，這兩者之間的矛盾正日益加劇。所以我想知道，你如何看待開放權重與封閉權重模型之間的權衡？而且必須具備什麼條件，你才會放心將最強大的模型開放權重？</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2545s" target="_blank" rel="noopener noreferrer">42:25</a> 嗯，我認為在達到相當高的能力水準之前，開放權重模型對社會來說是非常重要的。而社會究竟願意為開放權重模型的好處承受多少損害，這個問題在接下來幾年裡將會受到非常激烈的辯論。這也是個會移動的目標，因為社會建立的韌性越多——例如我想 OpenAI 基金會可望投入大量工作，協助防範未來的大流行病，</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2576s" target="_blank" rel="noopener noreferrer">42:56</a> 然後也許世界就能擁有更強大的生物模型，因為我們的應變能力會比今天更好。所以這不是個靜態的問題。隨著世界利用 AI 建立起更多的韌性，這個問題也會不斷演進。但我並不……</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2595s" target="_blank" rel="noopener noreferrer">43:15</a> 我不認為我們能負責任地開源我們目前內部最好的模型。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2603s" target="_blank" rel="noopener noreferrer">43:23</a> 近期內都不行。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2606s" target="_blank" rel="noopener noreferrer">43:26</a> 我試著在想世界上必須發生什麼改變，像是……</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2611s" target="_blank" rel="noopener noreferrer">43:31</a> 網際網路運作方式所依據的整個資安防禦模型都得改變。我們得建立起這個生物防護層，另外還有一長串其他的東西。現在，這個問題之所以有趣又迫切，是因為：那個模型到底領先多遠——有人真的相信它領先於會開源同等級模型的人很多嗎？不會非常多。所以我認為，不管封閉原始碼的這種滾動優勢是什麼，</p>
-<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2642s" target="_blank" rel="noopener noreferrer">44:02</a> 封閉權重模型用來協助世界建立韌性、抵禦我認為世界確實應該擁有的開放模型，這件事超級重要，也是—— 我不知道你在 OpenAI 基金會工作。這不是安排好的，不過我收下了。</p>
+<p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2642s" target="_blank" rel="noopener noreferrer">44:02</a> 封閉權重模型用來協助世界建立韌性、抵禦我認為世界確實應該擁有的開放模型，這件事超級重要，也是—— 我不知道你在（個人資料略）工作。這不是安排好的，不過我收下了。</p>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2659s" target="_blank" rel="noopener noreferrer">44:19</a> 我認為我們現在擁有全世界最大的基金會很酷，部分原因是我們可以全力衝刺，協助世界建立防禦盾。</p>
 <h2 id="sec-14">章節 14：未來的組織（44:28）</h2>
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2668s" target="_blank" rel="noopener noreferrer">44:28</a> 我叫（姓名略）。首先，謝謝你今天來到這裡。去年你上大衛・裴瑞爾的 How I Write podcast 時，分享了你的類比筆記系統：整天隨身帶著一本筆記本，把想法寫下來。在你的生活（無論個人或專業）中，是否有任何領域你會試著保持較低科技、更偏類比，以保留你身為一個人及專業人士所擁有的某些技能？而你會建議我們怎麼走同樣的路？</p>
@@ -295,7 +334,7 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
 <p><a href="https://www.youtube.com/watch?v=anAmTGcewX8&amp;t=2896s" target="_blank" rel="noopener noreferrer">48:16</a> 山姆，今天非常榮幸能和你對談。謝謝。請大家和我一起感謝山姆・奧特曼。（掌聲）</p>
 </article></main>
 <footer>
-<p>本頁為非官方繁體中文翻譯，依頻道上傳的英文字幕由 AI 模型翻譯與審校，未經人工校稿，也未對照原音；提問學生的姓名已略去。原影片版權屬 Stanford Graduate School of Business，僅供閱讀與研究。若有出入，以原影片為準。</p>
+<p>本頁為非官方繁體中文翻譯，依頻道上傳的英文字幕由 AI 模型翻譯與審校，未經人工校稿，也未對照原音；提問學生的姓名與個人背景已略去。原影片版權屬 Stanford Graduate School of Business，僅供閱讀與研究。若有出入，以原影片為準。</p>
 </footer>
 </div>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大檢視"><button type="button" aria-label="關閉放大檢視">關閉（Esc）</button><img src="" alt=""></div>
@@ -314,6 +353,52 @@ footer{max-width:720px;margin:64px auto 0;padding-top:16px;border-top:1px solid 
     if(e.key==='Escape'){close();}
     if(e.key==='Tab'){e.preventDefault();btn.focus();}
   });
+})();
+
+(function(){
+  var d=document, reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar=d.createElement('div');bar.className='read-progress';bar.setAttribute('aria-hidden','true');d.body.appendChild(bar);
+  var top=d.createElement('button');top.className='to-top';top.type='button';top.setAttribute('aria-label','回到頂端');top.textContent='↑';d.body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});});
+  var lastY=0;
+  function onScroll(){
+    var h=d.documentElement.scrollHeight-window.innerHeight, y=window.scrollY||0;
+    bar.style.transform='scaleX('+(h>0?Math.min(1,y/h):0)+')';
+    var up=y<lastY;lastY=y;top.classList.toggle('show',y>900&&(up||window.innerWidth>640));
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // 狀態欄標籤：依文字開頭分色（不改文字內容）
+  d.querySelectorAll('table').forEach(function(t){
+    var ths=[].slice.call(t.querySelectorAll('thead th'));
+    var i=ths.findIndex(function(th){return th.textContent.trim()==='狀態';});
+    if(i<0)return;
+    t.querySelectorAll('tbody tr').forEach(function(tr){
+      var td=tr.children[i];if(!td)return;
+      var tx=td.textContent.trim(), cls='';
+      if(/與書面不符|有爭議|未找到|未解|不一致|被推翻/.test(tx))cls='warn';else if(/部分確認|用詞比書面更進一步|僅台上說法|畫面所見|官方未|啟用方式已變|個人判斷|轉述|限量/.test(tx))cls='part';else if(/已確認/.test(tx))cls='ok';
+      td.innerHTML='<span class="badge '+cls+'"'+(tx.length<=8?' style="white-space:nowrap"':'')+'>'+td.innerHTML+'</span>';
+    });
+  });
+  // 導覽當前章
+  var links={};d.querySelectorAll('nav.toc a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  var heads=[].slice.call(d.querySelectorAll('h2[id]')).filter(function(h){return links[h.id];});
+  function cur(){
+    var y=window.scrollY+window.innerHeight*0.35, pick=null;
+    heads.forEach(function(h){if(h.getBoundingClientRect().top+window.scrollY<=y)pick=h.id;});
+    Object.keys(links).forEach(function(k){if(k===pick){links[k].setAttribute('aria-current','true');}else{links[k].removeAttribute('aria-current');}});
+    if(pick&&links[pick]){var a=links[pick],u=a.closest('ul'),ar=a.getBoundingClientRect(),ur=u.getBoundingClientRect();u.scrollTo({left:u.scrollLeft+(ar.left-ur.left)-(ur.width-ar.width)/2,behavior:reduce?'auto':'smooth'});}
+  }
+  window.addEventListener('scroll',cur,{passive:true});cur();
+  // 章節與圖進場；JS 失效時內容照常顯示
+  if(!reduce&&'IntersectionObserver' in window){
+    d.documentElement.classList.add('js-reveal');
+    var els=d.querySelectorAll('h2, figure, .summary-card, table');
+    els.forEach(function(e){e.classList.add('rv');if(e.tagName==='FIGURE'&&e.querySelector('img[src*="fig-trace"]'))e.classList.add('rv-trace');});
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('rv-in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  }
+  var hp=d.querySelector('.hero-figure picture');
+  if(hp&&!reduce){window.addEventListener('scroll',function(){var y=window.scrollY;if(y<900){hp.style.transform='translateY('+Math.round(y*0.12)+'px)';}},{passive:true});}
 })();
 </script>
 </body>
